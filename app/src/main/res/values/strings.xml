@@ -1,0 +1,73 @@
+<resources>
+    <string name="app_name">FindSomeFood</string>
+
+    <!-- Home Activity Strings -->
+    <string name="button_cheap">I want fast and cheap</string>
+    <string name="button_fancy">I\'m feeling fancy</string>
+    <string name="button_specific">I feel like...</string>
+    <string name="button_near">I want the nearest food</string>
+    <string name="button_records">Previous Orders</string>
+
+    <!-- Cuisine Strings -->
+    <string-array name="cuisines_list">
+        <item>Vegetarian</item>
+        <item>Chinese</item>
+        <item>Mexican</item>
+        <item>Italian</item>
+        <item>Pizza</item>
+        <item>Greek</item>
+        <item>Japanese</item>
+        <item>Vietnamese</item>
+        <item>Thai</item>
+        <item>American, Diner</item> <!--invokes query "American, Diner" -->
+        <item>Sandwiches, Deli Food</item> <!--invokes query "Sandwiches, Deli Food" -->
+        <item>Bakery, Pastries</item> <!--invokes query "Bakery, Pastries" -->
+        <item>Smoothies and Juices</item> <!--invokes query "Smoothies and Juices" -->
+        <item>Coffee and Tea</item> <!--invokes query "Ice Cream" -->
+        <item>Ice Cream</item>
+    </string-array>
+    <string name="specific_dialogue_title">Please pick one or a few. If no results, try less.</string>
+    <string name="specific_button_go">GO</string>
+    <string name="specific_button_cancel">Cancel</string>
+    <string name="specific_button_clear">Clear all</string>
+
+    <!--Item Confirm String -->
+    <string name="button_confirm">I want one!</string>
+    <string name="button_another">I want another!</string>
+    <string name="button_remove">"I don't want this..."</string>
+    <string name="text_view_item_confirm">"Do you want this item?"</string>
+
+    <!--Menu Address Change String -->
+    <string name="text_view_address_change">Please put an area to search around. Just your street and city is fine.</string>
+    <string name="text_view_address_save">Save</string>
+    <string name="text_view_address_cancel">Cancel</string>
+
+    <!--MenuActivity Strings -->
+    <string name="text_view_website_travel">Try the website (may not always work)</string>
+
+    <!--CurrentOrder Activity Strings -->
+    <string name="button_call">Call and order</string>
+    <string name="button_directions">Driving directions</string>
+    <string name="button_save">Save this order</string>
+
+    <!--List Item Default Strings -->
+    <string name="text_view_orders_name">Awesome New Smoothie</string>
+    <string name="text_view_orders_price">10.50</string>
+    <string name="text_view_orders_description">Higher prices...</string>
+    <string name="text_view_orders_amount">x1</string>
+
+    <string name="text_view_previous_orders_name">Awesome Old Smoothie</string>
+    <string name="text_view_previous_orders_price">7.53</string>
+    <string name="text_view_previous_orders_description">Really good!</string>
+    <string name="text_view_previous_orders_amount">x2</string>
+
+    <string name="text_view_restaurant_item_name_default">Restaurant Name</string>
+    <string name="text_view_restaurant_item_phone_default">1(555)479-5768</string>
+    <string name="text_view_restaurant_item_address_default">No address available</string>
+    <string name="text_view_restaurant_item_hours_default">No hours available</string>
+    <string name="text_view_no_options">Please try a different search!</string>
+
+    <!-- Menu Item Strings -->
+    <string name="settings_address">Change search area</string>
+
+</resources>

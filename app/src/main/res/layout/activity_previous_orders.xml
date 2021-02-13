@@ -1,0 +1,67 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_view_previous_order_restaurant_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_weight="1"
+        android:text="@string/text_view_restaurant_item_name_default"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/recycler_view_previous_orders_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_previous_orders_detail"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/text_view_previous_order_restaurant_name"
+        android:layout_weight="115"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.233"
+        tools:listitem="@layout/current_orders_item" />
+
+    <Button
+        android:id="@+id/button_previous_order_call"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/recycler_view_previous_orders_detail"
+        android:layout_marginBottom="4dp"
+        android:layout_weight="1"
+        android:text="@string/button_call"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/button_previous_order_drive"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recycler_view_previous_orders_detail"
+        app:layout_constraintVertical_bias="0.045" />
+
+    <Button
+        android:id="@+id/button_previous_order_drive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_previous_order_call"
+        android:layout_marginBottom="4dp"
+        android:layout_weight="1"
+        android:text="@string/button_directions"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/button_current_save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_previous_order_call" />
+</LinearLayout>

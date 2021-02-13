@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:layout_margin="8dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/restaurant_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:text="Name of Restaurant"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <TextView
+            android:id="@+id/restaurant_item_price_range"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_toStartOf="@id/restaurant_item_name"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Price"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <TextView
+            android:id="@+id/restaurant_item_cuisine"
+            android:layout_width="wrap_content"
+            android:paddingTop="8dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_below="@id/restaurant_item_name"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="Vegetarian, Italian" />
+
+        <TextView
+            android:id="@+id/restaurant_item_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:layout_below="@id/restaurant_item_cuisine"
+            android:textColor="@color/black"
+            android:ellipsize="end"
+            android:textSize="16dp"
+            android:maxLines="1"
+            android:text="@string/text_view_restaurant_item_address_default" />
+
+        <TextView
+            android:id="@+id/restaurant_item_hours"
+            android:layout_width="wrap_content"
+            android:paddingTop="8dp"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:textSize="12dp"
+            android:layout_below="@id/restaurant_item_address"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/text_view_restaurant_item_hours_default" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

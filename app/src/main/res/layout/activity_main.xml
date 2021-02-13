@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/button_cheap"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/button_cheap"
+        android:textSize="28sp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintVertical_weight="2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/button_fancy"
+        app:layout_constraintBottom_toTopOf="@id/button_specific">
+
+    </Button>
+
+    <Button
+        android:id="@+id/button_fancy"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/button_fancy"
+        android:textSize="28sp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintVertical_weight="2"
+        app:layout_constraintBottom_toTopOf="@id/button_near"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_cheap"
+        app:layout_constraintTop_toTopOf="parent"></Button>
+
+    <Button
+        android:id="@+id/button_specific"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="15dp"
+        android:text="@string/button_specific"
+        android:textSize="28sp"
+        app:layout_constraintVertical_weight="2"
+        app:layout_constraintBottom_toTopOf="@+id/button_records"
+        app:layout_constraintEnd_toStartOf="@+id/button_near"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_cheap"></Button>
+
+    <Button
+        android:id="@+id/button_near"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/button_near"
+        android:layout_margin="15dp"
+        app:layout_constraintVertical_weight="2"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toTopOf="@+id/button_records"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/button_specific"
+        app:layout_constraintTop_toBottomOf="@+id/button_fancy"></Button>
+
+    <Button
+        android:id="@+id/button_records"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/button_records"
+        android:textSize="20sp"
+        app:layout_constraintVertical_weight=".5"
+        app:layout_constraintBottom_toTopOf="@+id/view_buffer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_specific"/>
+
+    <View
+        android:id="@+id/view_buffer"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_records" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
