@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,6 +17,7 @@ import com.adamrubin.findsomefood.Data.Menu;
 import com.adamrubin.findsomefood.Data.Menu_Item;
 import com.adamrubin.findsomefood.Data.Menu_Section;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 
@@ -26,6 +28,7 @@ public class MenuActivity extends AppCompatActivity {
     private static final int REQUEST_CODE = 400;
     private static final int RESULT_OK = 200;
     RecyclerView recyclerView;
+    CoordinatorLayout coordinatorLayout;
     FloatingActionButton confirmButton;
     private String name;
     private String phone;
@@ -45,6 +48,7 @@ public class MenuActivity extends AppCompatActivity {
 
         //find all relevant views
         setContentView(R.layout.activity_menu);
+        coordinatorLayout = findViewById(R.id.menu_coordinator_layout);
         recyclerView = findViewById(R.id.menu_recycler_view);
         websiteView = findViewById(R.id.menu_website);
         confirmButton = findViewById(R.id.button_move_to_final_order);
@@ -107,7 +111,7 @@ public class MenuActivity extends AppCompatActivity {
         menuListAdapter.setOnItemClickListener(position -> {
             Menu_Item newItem = menu_items.get(position);
             chosenItems.add(newItem);
-            Toast.makeText(this, "Item added to order!", Toast.LENGTH_SHORT).show();
+            Snackbar.make(coordinatorLayout, R.string.item_added, Snackbar.LENGTH_SHORT).show();
         });
     }
 

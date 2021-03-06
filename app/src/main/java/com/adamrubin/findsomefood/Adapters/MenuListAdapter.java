@@ -42,16 +42,6 @@ public class MenuListAdapter extends RecyclerView.Adapter<MenuListAdapter.MenuLi
 
     @Override
     public void onBindViewHolder(@NonNull MenuListHolder holder, int position) {
-        //this functionality is now in MenuActivity under SendMenuToAdapter
-//        holder.itemView.setOnClickListener(view -> {
-//            Intent intent = new Intent(context, ItemDetailsActivity.class);
-//            //what should go to item detail??
-//            Bundle bundle = new Bundle();
-//            bundle.putParcelableArrayList("menuList", (ArrayList<? extends Parcelable>) menuList);
-//            intent.putExtras(bundle);
-//            context.startActivity(intent);
-//        });
-
         //menu data is hiding below 3 levels of objects...
         holder.menuItemName.setText(menuList.get(position).getName());
         holder.menuItemPrice.setText(menuList.get(position).getPrice().toString());
@@ -75,14 +65,11 @@ public class MenuListAdapter extends RecyclerView.Adapter<MenuListAdapter.MenuLi
             menuItemPrice = itemView.findViewById(R.id.menu_item_price);
             menuItemDescription = itemView.findViewById(R.id.menu_item_description);
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (listener != null) {
-                        int position = getAdapterPosition();
-                        if (position != RecyclerView.NO_POSITION) {
-                            listener.onItemClick(position);
-                        }
+            itemView.setOnClickListener(v -> {
+                if (listener != null) {
+                    int position = getAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION) {
+                        listener.onItemClick(position);
                     }
                 }
             });

@@ -5,16 +5,19 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.adamrubin.findsomefood.Adapters.CurrentOrderAdapter;
 import com.adamrubin.findsomefood.Data.Menu_Item;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 
@@ -34,12 +37,14 @@ public class CurrentOrderActivity extends AppCompatActivity {
     ArrayList<Menu_Item> chosenItems;
     CurrentOrderAdapter currentOrderAdapter;
     RecyclerView recyclerView;
+    LinearLayout linearLayout;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_current_order);
         recyclerView = findViewById(R.id.recycler_view_previous_orders_detail);
+        linearLayout = findViewById(R.id.linear_layout_current_order);
 
         Intent intent = getIntent();
         chosenItems = intent.getParcelableArrayListExtra("chosenItems");
@@ -114,8 +119,13 @@ public class CurrentOrderActivity extends AppCompatActivity {
 
     private void displayMessage(int type) {
         switch (type) {
-            case 0: Toast.makeText(this, "Another for you!", Toast.LENGTH_SHORT).show();
-            case 1: Toast.makeText(this, "Order modified", Toast.LENGTH_SHORT).show();
+            case 0:
+                Snackbar.make(linearLayout, R.string.item_copied, Snackbar.LENGTH_SHORT).show();
+            case 1:
+                Snackbar.make(linearLayout, R.string.item_removed, Snackbar.LENGTH_SHORT).show();
+
+//            case 0: Toast.makeText(this, "Another for you!", Toast.LENGTH_SHORT).show();
+//            case 1: Toast.makeText(this, "Order modified", Toast.LENGTH_SHORT).show();
         }
     }
 }

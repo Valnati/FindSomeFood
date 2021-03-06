@@ -39,7 +39,6 @@ public class RestaurantActivity extends AppCompatActivity {
     private RestaurantAdapter restaurantAdapter;
 
     APIRepository apiRepository;
-//    ArrayList<Children> childrenList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,7 +95,6 @@ public class RestaurantActivity extends AppCompatActivity {
                 Log.d("TAG", "onResponse: received information: " + response.body().toString());
 
                 //get all children from json data, including kind String, and data {} object
-                //currently getting NO data to list, even though it is there...
                 Documenu documenu = response.body();
                 ArrayList<Children> childrenList = documenu.getData();
                 PassToRecyclerView(childrenList);
@@ -114,22 +112,19 @@ public class RestaurantActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(restaurantAdapter);
 
-        restaurantAdapter.setOnItemClickListener(new RestaurantAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(int position) {
-                Intent intent = new Intent(RestaurantActivity.this, MenuActivity.class);
-                Bundle bundle = new Bundle();
+        restaurantAdapter.setOnItemClickListener((RestaurantAdapter.OnItemClickListener) position -> {
+            Intent intent = new Intent(RestaurantActivity.this, MenuActivity.class);
+            Bundle bundle = new Bundle();
 
-                ArrayList<Menu> menu = restaurantList.get(position).getMenu();
+            ArrayList<Menu> menu = restaurantList.get(position).getMenu();
 
-                bundle.putParcelableArrayList("menu", (ArrayList<? extends Parcelable>) menu);
-                bundle.putString("name", restaurantList.get(position).getRestaurant_name());
-                bundle.putString("phone", restaurantList.get(position).getRestaurant_phone());
-                bundle.putString("address", restaurantList.get(position).getAddress().getFormatted_address());
-                bundle.putString("website", restaurantList.get(position).getRestaurant_website());
-                intent.putExtras(bundle);
-                startActivity(intent);
-            }
+            bundle.putParcelableArrayList("menu", (ArrayList<? extends Parcelable>) menu);
+            bundle.putString("name", restaurantList.get(position).getRestaurant_name());
+            bundle.putString("phone", restaurantList.get(position).getRestaurant_phone());
+            bundle.putString("address", restaurantList.get(position).getAddress().getFormatted_address());
+            bundle.putString("website", restaurantList.get(position).getRestaurant_website());
+            intent.putExtras(bundle);
+            startActivity(intent);
         });
     }
 }
