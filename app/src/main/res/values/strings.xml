@@ -75,4 +75,6 @@
     <string name="item_copied">Another for you!</string>
     <string name="item_added">Added to order!</string>
     <string name="item_removed">Order modified</string>
+
+    <string name="API_KEY">YOUR API KEY HERE</string>
 </resources>

@@ -28,7 +28,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class RestaurantActivity extends AppCompatActivity {
     private static final String BASE_URL = "https://api.documenu.com/v2/";
-    private static final String API_KEY = "b411218966833bf33f43dc1c2eb77e51";
+    private final String API_KEY = getString(R.string.API_KEY);
 
     private double latitude;
     private double longitude;
